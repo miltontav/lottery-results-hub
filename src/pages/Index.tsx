@@ -1,23 +1,45 @@
 import { LotteryCard } from "@/components/LotteryCard";
-import { getLotteryResults } from "@/data/lotteryData";
 import { useEffect, useState } from "react";
 import { LotteryResult } from "@/types/lottery";
 import { RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const [lotteries, setLotteries] = useState<LotteryResult[]>([]);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [lastUpdate, setLastUpdate] = useState(new Date());
 
-  const loadResults = () => {
+  const loadResults = async () => {
     setIsRefreshing(true);
-    // Simular carga de API
-    setTimeout(() => {
-      setLotteries(getLotteryResults());
-      setLastUpdate(new Date());
+    try {
+      const { data, error } = await supabase.functions.invoke('fetch-lottery-results');
+      
+      if (error) {
+        console.error('Error fetching lottery results:', error);
+        toast({
+          title: "Error",
+          description: "No se pudieron cargar los resultados. Intenta de nuevo.",
+          variant: "destructive",
+        });
+        return;
+      }
+      
+      if (data?.results) {
+        setLotteries(data.results);
+        setLastUpdate(new Date());
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      toast({
+        title: "Error",
+        description: "No se pudieron cargar los resultados. Intenta de nuevo.",
+        variant: "destructive",
+      });
+    } finally {
       setIsRefreshing(false);
-    }, 500);
+    }
   };
 
   useEffect(() => {
@@ -45,17 +67,16 @@ const Index = () => {
   }, [] as { color: string; lotteries: LotteryResult[] }[]);
 
   const colorNames: Record<string, string> = {
-    verde: "Lotería Nacional · Gana Más · Juega Pega",
+    verde: "Lotería Nacional · Gana Más · Juega+ Pega+",
     amarillo: "Leidsa",
     "azul-oscuro": "Lotería Real",
     "azul-claro": "Loteka",
-    lila: "Lotería Americana",
     rojo: "La Primera",
-    naranja: "La Suerte",
-    celeste: "Lotedom",
-    zapote: "Lotería Águila",
-    zanahoria: "King Lottery",
+    naranja: "La Suerte Dominicana",
+    celeste: "LoteDom",
   };
+  
+  const { toast } = useToast();
 
   return (
     <div className="min-h-screen bg-background">
