@@ -1,73 +1,52 @@
-# Welcome to your Lovable project
+# LotteryScraping-RD Lotería
 
-## Project info
+Este proyecto es una aplicación de web scraping que extrae información sobre las loterías dominicanas desde el sitio web [Loterías Dominicanas](https://loteriasdominicanas.com/). Proporciona una API para buscar y filtrar información sobre las loterías y sus resultados.
 
-**URL**: https://lovable.dev/projects/8ea1e006-a482-4516-8900-92c3c5a06d92
+para el funcionamiento de este cargamos un archivo **json** de la siguiente manera:
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/8ea1e006-a482-4516-8900-92c3c5a06d92) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```python
+	with open('lottery.json') as file:
+		json_data = file.read()
+		data = json.loads(json_data)
 ```
 
-**Edit a file directly in GitHub**
+Aunque tambien lo pudemos hacer de manera dirrecta:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```python
+	json_data = json_data = '''
+	[
+		{
+			"id": 1,
+			"name": "La Primera Día"
+		},
+		{
+			"id": 2,
+			"name": "Anguila Mañana"
+		},
+		# ... otros elementos ...
+	]
+	'''
 
-**Use GitHub Codespaces**
+	data = json.loads(json_data)
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Dicho **Json** se utiliza para filtrar y seleccionar las distintas loterías de la página web, permitiendo devolver únicamente las loterías específicas que se deseen. Cada entrada en el JSON posee un identificador (ID) que es empleado para establecer un orden dentro de la estructura, y el nombre en el JSON debe coincidir con el nombre de la lotería según se presenta en la página [Loterías Dominicanas](https://loteriasdominicanas.com/)
 
-## What technologies are used for this project?
+## Características
 
-This project is built with:
+- Obtención de datos de loterías en tiempo real.
+- Búsqueda y filtrado por nombre de lotería y fecha.
+- Filtar entre consorcio de loterias ej:Nacional, leisa, americana etc
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Requisitos
 
-## How can I deploy this project?
+- Python 3.x
+- Bibliotecas: Flask, Flask-CORS, BeautifulSoup4
 
-Simply open [Lovable](https://lovable.dev/projects/8ea1e006-a482-4516-8900-92c3c5a06d92) and click on Share -> Publish.
+## Instalación
 
-## Can I connect a custom domain to my Lovable project?
+1. Clona el repositorio:
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```bash
+git clone https://github.com/CarlsRemy/LotteryScraping-RD.git
+```
