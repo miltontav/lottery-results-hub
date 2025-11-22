@@ -15,37 +15,67 @@ interface LotteryMapping {
 }
 
 const lotteryMappings: LotteryMapping[] = [
+  // La Primera
   { id: "la-primera-dia", name: "La Primera Día", color: "rojo", logo: "/logos/la-primera-dia.png", time: "12:00 PM" },
+  { id: "la-primera-noche", name: "Primera Noche", color: "rojo", logo: "/logos/la-primera-noche.png", time: "08:00 PM" },
+  
+  // Anguila
   { id: "anguila-manana", name: "Anguila Mañana", color: "zapote", logo: "/logos/anguila.png", time: "10:00 AM" },
-  { id: "la-suerte-1230", name: "La Suerte", color: "naranja", logo: "/logos/la-suerte.png", time: "12:30 PM" },
   { id: "anguila-medio-dia", name: "Anguila Medio Día", color: "zapote", logo: "/logos/anguila.png", time: "01:00 PM" },
-  { id: "real-quiniela", name: "Quiniela Real", color: "azul-oscuro", logo: "/logos/loteria-real.png", time: "12:55 PM" },
+  { id: "anguila-tarde", name: "Anguila Tarde", color: "zapote", logo: "/logos/anguila.png", time: "06:00 PM" },
+  { id: "anguila-noche", name: "Anguila Noche", color: "zapote", logo: "/logos/anguila.png", time: "09:00 PM" },
+  
+  // La Suerte
+  { id: "la-suerte-1230", name: "La Suerte 12:30", color: "naranja", logo: "/logos/la-suerte.png", time: "12:30 PM" },
+  { id: "la-suerte-tarde", name: "La Suerte 18:00", color: "naranja", logo: "/logos/la-suerte.png", time: "06:00 PM" },
+  { id: "la-suerte-dominicana", name: "La Suerte Dominicana", color: "naranja", logo: "/logos/la-suerte.png", time: "06:00 PM" },
+  
+  // Lotería Real
+  { id: "real-quiniela", name: "Quiniela Real", color: "azul-oscuro", logo: "/logos/quiniela-real.png", time: "12:55 PM" },
   { id: "real-tu-fecha", name: "Tu Fecha Real", color: "azul-oscuro", logo: "/logos/loteria-real.png", time: "12:55 PM" },
   { id: "real-pega-4", name: "Pega 4 Real", color: "azul-oscuro", logo: "/logos/loteria-real.png", time: "12:55 PM" },
   { id: "real-loto-pool", name: "Loto Pool Real", color: "azul-oscuro", logo: "/logos/loto-pool-real.png", time: "12:55 PM" },
+  { id: "real-loto", name: "Loto Real", color: "azul-oscuro", logo: "/logos/loteria-real.png", time: "07:55 PM" },
+  
+  // Lotería Americana
   { id: "florida-dia", name: "Florida Día", color: "lila", logo: "/logos/florida-dia.png", time: "01:30 PM" },
-  { id: "lotedom-quiniela", name: "Quiniela LoteDom", color: "celeste", logo: "/logos/lotedom.png", time: "12:00 PM" },
+  { id: "florida-noche", name: "Florida Noche", color: "lila", logo: "/logos/florida-noche.png", time: "09:30 PM" },
   { id: "new-york-tarde", name: "New York Tarde", color: "lila", logo: "/logos/new-york-dia.png", time: "03:00 PM" },
-  { id: "gana-mas", name: "Gana Más", color: "verde", logo: "/logos/gana-mas.png", time: "02:30 PM" },
+  { id: "new-york-noche", name: "New York Noche", color: "lila", logo: "/logos/new-york-noche.png", time: "10:30 PM" },
+  { id: "powerball", name: "Powerball", color: "lila", logo: "/logos/powerball.png", time: "10:59 PM" },
+  { id: "mega-millions", name: "Mega Millions", color: "lila", logo: "/logos/mega-millions.png", time: "11:00 PM" },
+  
+  // Lotedom
+  { id: "lotedom-quiniela", name: "Quiniela LoteDom", color: "celeste", logo: "/logos/lotedom.png", time: "12:00 PM" },
+  { id: "lotedom-quemaito", name: "El Quemaíto Mayor", color: "celeste", logo: "/logos/quemaito-mayor.png", time: "12:00 PM" },
+  
+  // Lotería Nacional
   { id: "nacional-tarde", name: "Lotería Nacional", color: "verde", logo: "/logos/loteria-nacional.png", time: "02:30 PM" },
+  { id: "nacional-noche", name: "Lotería Nacional Noche", color: "verde", logo: "/logos/loteria-nacional.png", time: "09:00 PM" },
+  { id: "gana-mas", name: "Gana Más", color: "verde", logo: "/logos/gana-mas.png", time: "02:30 PM" },
   { id: "juega-pega", name: "Juega+ Pega+", color: "verde", logo: "/logos/gana-mas.png", time: "02:30 PM" },
-  { id: "la-suerte-tarde", name: "La Suerte Dominicana", color: "naranja", logo: "/logos/la-suerte.png", time: "06:00 PM" },
-  { id: "anguila-tarde", name: "Anguila Tarde", color: "zapote", logo: "/logos/anguila.png", time: "06:00 PM" },
+  { id: "juega-mas", name: "Juega Más", color: "verde", logo: "/logos/gana-mas.png", time: "02:30 PM" },
+  
+  // Loteka
   { id: "loteka-quiniela", name: "Quiniela Loteka", color: "azul-claro", logo: "/logos/loteka.png", time: "07:55 PM" },
   { id: "loteka-megalotto", name: "MegaLotto", color: "azul-claro", logo: "/logos/loteka.png", time: "07:55 PM" },
+  { id: "loteka-loto", name: "Loto Loteka", color: "azul-claro", logo: "/logos/loteka.png", time: "07:55 PM" },
   { id: "mega-chances", name: "Mega Chances", color: "azul-claro", logo: "/logos/mega-chances.png", time: "07:55 PM" },
   { id: "mc-repartidera", name: "MC Repartidera", color: "azul-claro", logo: "/logos/mega-chances.png", time: "07:55 PM" },
   { id: "el-extra", name: "El Extra", color: "azul-claro", logo: "/logos/loteka.png", time: "07:55 PM" },
   { id: "toca-3", name: "Toca 3", color: "azul-claro", logo: "/logos/loteka.png", time: "07:55 PM" },
-  { id: "nacional-noche", name: "Lotería Nacional Noche", color: "verde", logo: "/logos/loteria-nacional.png", time: "09:00 PM" },
-  { id: "anguila-noche", name: "Anguila Noche", color: "zapote", logo: "/logos/anguila.png", time: "09:00 PM" },
+  
+  // Leidsa
   { id: "leidsa-pega-3", name: "Pega 3 Más", color: "amarillo", logo: "/logos/pega-3-mas.png", time: "08:55 PM" },
   { id: "quiniela-leidsa", name: "Quiniela Leidsa", color: "amarillo", logo: "/logos/leidsa.png", time: "08:55 PM" },
   { id: "loto-pool", name: "Loto Pool", color: "amarillo", logo: "/logos/loto-pool.png", time: "08:55 PM" },
+  { id: "loto-pool-leidsa", name: "Loto Pool Leidsa", color: "amarillo", logo: "/logos/loto-pool.png", time: "08:55 PM" },
+  { id: "loto-leidsa", name: "Loto Leidsa", color: "amarillo", logo: "/logos/leidsa.png", time: "08:55 PM" },
   { id: "super-kino", name: "Super Kino TV", color: "amarillo", logo: "/logos/super-kino.png", time: "08:55 PM" },
-  { id: "la-primera-noche", name: "La Primera Noche", color: "rojo", logo: "/logos/la-primera-noche.png", time: "08:00 PM" },
-  { id: "florida-noche", name: "Florida Noche", color: "lila", logo: "/logos/florida-noche.png", time: "09:30 PM" },
-  { id: "new-york-noche", name: "New York Noche", color: "lila", logo: "/logos/new-york-noche.png", time: "10:30 PM" },
+  
+  // King Lottery
+  { id: "king-lottery-dia", name: "King Lottery Día", color: "zanahoria", logo: "/logos/king-lottery.png", time: "12:55 PM" },
+  { id: "king-lottery-noche", name: "King Lottery Noche", color: "zanahoria", logo: "/logos/king-lottery.png", time: "07:55 PM" },
 ];
 
 async function fetchLotteryResults() {
@@ -91,11 +121,24 @@ async function fetchLotteryResults() {
         (el as Element).textContent?.trim() || ""
       );
 
-      // Find matching lottery mapping
-      const mapping = lotteryMappings.find((m) =>
-        title.includes(m.name.toLowerCase()) || 
-        m.name.toLowerCase().includes(title)
-      );
+      // Find matching lottery mapping - buscar por coincidencia parcial más flexible
+      const titleLower = title.toLowerCase();
+      const mapping = lotteryMappings.find((m) => {
+        const nameLower = m.name.toLowerCase();
+        // Coincidencia exacta
+        if (titleLower === nameLower) return true;
+        // Si el título contiene el nombre completo
+        if (titleLower.includes(nameLower)) return true;
+        // Si el nombre contiene el título completo
+        if (nameLower.includes(titleLower)) return true;
+        // Coincidencia por palabras clave importantes
+        const titleWords = titleLower.split(/\s+/);
+        const nameWords = nameLower.split(/\s+/);
+        const matchingWords = titleWords.filter(word => 
+          word.length > 3 && nameWords.includes(word)
+        );
+        return matchingWords.length >= 2;
+      });
 
       if (mapping && numbers.length > 0) {
         console.log(`Found result for ${mapping.name}: ${numbers.join('-')}`);
